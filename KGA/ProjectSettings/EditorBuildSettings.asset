@@ -6,9 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: "Assets/25.01.03 (31\uC77C \uCC28)/Scenes/Title Scene.unity"
+    path: "Assets/25.01.03~25.01.06 (31\uC77C \uCC28~32\uC77C \uCC28)/Scenes/Title
+      Scene.unity"
     guid: 12cf14c9a88008642bcf4abc8e2a9ac7
   - enabled: 1
-    path: "Assets/25.01.03 (31\uC77C \uCC28)/Scenes/Main Scene.unity"
+    path: "Assets/25.01.03~25.01.06 (31\uC77C \uCC28~32\uC77C \uCC28)/Scenes/Stage
+      1 Scene.unity"
     guid: a377e2d7014ed79468153c0b8571a6d5
   m_configObjects: {}

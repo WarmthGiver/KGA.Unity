@@ -8,7 +8,7 @@ namespace KGA.Day30
     {
         // Rigidbody
         // 게임 오브젝트에 물리를 부여하는 컴포넌트.
-        private Rigidbody2D rigidbody2D;
+        private Rigidbody2D rigidbody2D; 
 
         private float speed = 1f;
 
