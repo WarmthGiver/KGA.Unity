@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace KGA
+namespace ZL
 {
     public static partial class LayerMaskExensions
     {

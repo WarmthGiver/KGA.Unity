@@ -2,8 +2,6 @@ using UnityEngine;
 
 namespace KGA.Day31
 {
-    [DisallowMultipleComponent]
-
     public sealed class Player : Character
     {
         private Vector2 position;
@@ -32,7 +30,7 @@ namespace KGA.Day31
                 position.x += 1f;
             }
 
-            position = position.normalized * speed;
+            position = speed * Time.deltaTime * position.normalized;
 
             transform.Translate(position);
         }

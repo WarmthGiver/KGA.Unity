@@ -1,19 +1,20 @@
 using UnityEngine;
 
+using ZL;
+
 namespace KGA.Day31
 {
-    public interface IDamageable
-    {
-        public void TakeDamage(int value);
-    }
-
-    [DisallowMultipleComponent]
-
-    public abstract class Character : SceneObject, IDamageable
+    public abstract class Character : SceneObject, IHittable
     {
         public int hp = 1;
 
-        public void TakeDamage(int value)
+        [SerializeField]
+
+        private LayerMask hitterLayers;
+
+        public LayerMask HitterLayers => hitterLayers;
+
+        public virtual void TakeHit(int value)
         {
             hp -= value;
 
@@ -24,26 +25,5 @@ namespace KGA.Day31
                 Dead();
             }
         }
-    }
-
-    [DisallowMultipleComponent]
-
-    public abstract class SceneObject : MonoBehaviour
-    {
-        public float speed = 0f;
-
-        protected virtual void Update()
-        {
-            if (Stage1Scene.IsGameOver == true)
-            {
-                return;
-            }
-
-            Movement();
-        }
-
-        protected abstract void Movement();
-
-        protected abstract void Dead();
     }
 }

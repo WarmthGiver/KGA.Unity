@@ -2,8 +2,6 @@ using UnityEngine;
 
 namespace KGA.Day31
 {
-    [DisallowMultipleComponent]
-
     public sealed class Kamikaze : Enemy
     {
         public Vector2 direction = new(0f, 1f);
@@ -17,12 +15,12 @@ namespace KGA.Day31
         {
             transform.position = new Vector2(Random.Range(-2f, 2f), 6);
 
-            speed = Random.Range(0.01f, 0.1f);
+            speed = Random.Range(1f, 10f);
         }
 
         protected override void Movement()
         {
-            transform.Translate(direction * speed);
+            transform.Translate(speed * Time.deltaTime * direction);
 
             if (transform.position.y <= -6f)
             {

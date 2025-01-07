@@ -1,29 +1,20 @@
 using UnityEngine;
 
+using ZL;
+
 namespace KGA.Day31
 {
-    [DisallowMultipleComponent]
-
-    public abstract class Enemy : Character
+    public abstract class Enemy : Character, IHitter
     {
         public int collisionDamage = 1;
 
-        public LayerMask collisionableLayers;
+        public LayerMask hittableLayers;
+
+        public LayerMask HittableLayers => hittableLayers;
 
         private void Start()
         {
             Initialize();
-        }
-
-        private void OnTriggerStay(Collider other)
-        {
-            if (collisionableLayers.Belong(other) == true)
-            {
-                if (other is IDamageable damageable)
-                {
-                    damageable.TakeDamage(collisionDamage);
-                }
-            }
         }
 
         private void Initialize()
@@ -31,6 +22,11 @@ namespace KGA.Day31
             transform.position = new Vector2(Random.Range(-2f, 2f), 6);
 
             speed = Random.Range(0.01f, 0.1f);
+        }
+
+        public void Hit(IHittable hittable)
+        {
+
         }
 
         protected override void Dead()
